@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import {loadImageHandler} from '../../../axios/index';
-import {Loading} from '../../utils/loading/Loading'
+import {loadImageHandler} from '../../axios/index';
+import {Loading} from '../utils/loading/Loading'
 import "./initialNews.sass";
 
 export const InitialNews = () => {
@@ -23,9 +23,11 @@ export const InitialNews = () => {
             return (
               <div className="news__container__item" key={index}>
                 <h2>{item.title}</h2>
-                <h3>Published Date: {item.published_date || 'Not date'}</h3>
-                <h4>Source: {item.source}</h4>
-                <a target="blank" href={item.url}>New in New York Time</a>
+                <h3>Published Date: {item.published_date || "Not date"}</h3>
+                <h4>Source: {item.source || "Not date"}</h4>
+                <a target="blank" href={item.url}>
+                  Go to the official page
+                </a>
               </div>
             );
           })}

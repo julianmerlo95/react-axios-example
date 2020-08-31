@@ -1,8 +1,8 @@
 import React from "react";
-import {loadImageHandler} from '../../../axios/index';
-import "./searchNews.sass";
+import { loadImageHandler } from "../../axios/index";
 import { useDispatch } from "react-redux";
-import { searchImage } from "../../../redux/action/index";
+import { searchImage } from "../../redux/action/index";
+import "./searchNews.sass";
 
 export const SearchNews = () => {
   const dispatch = useDispatch();
@@ -26,11 +26,13 @@ export const SearchNews = () => {
 
   return (
     <form onSubmit={(e) => submitHandler(e)} className="search">
-      <input 
-      type="text" 
-      name="news" 
-      placeholder="Search here..."
-      onChange={(e) => changeHandler(e)} />
+      <input
+        type="text"
+        name="news"
+        placeholder="Search here..."
+        required
+        onChange={(e) => changeHandler(e)}
+      />
       <div>
         <button>Search</button>
       </div>
